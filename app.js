@@ -1,3 +1,5 @@
+// step1 : Getting selected values from user and computer
+
 const choices = ["rock", "paper", "scissors"];
 
 const plyerChoice = prompt("Choose rock, paper, scissors");
@@ -27,3 +29,27 @@ if (plyerChoice) {
 const randomNumber = Math.floor(Math.random() * choices.length);
 const computerChoise = choices[randomNumber];
 console.log(`Computer chooses: ${computerChoise}`);
+
+// step2 : Determine the winner of the game
+
+if (plyerChoice === computerChoise) {
+  console.log("It's a tie.");
+} else if (plyerChoice === "rock") {
+  if (computerChoise === "scissors") {
+    console.log("You win.");
+  } else {
+    console.log("You lose!");
+  }
+} else if (plyerChoice === "paper") {
+  if (computerChoise === "rock") {
+    console.log("You win.");
+  } else {
+    console.log("You lose!");
+  }
+} else {
+  if (computerChoise === "paper") {
+    console.log("You win.");
+  } else {
+    console.log("You lose!");
+  }
+}
