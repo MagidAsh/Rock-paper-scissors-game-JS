@@ -14,8 +14,18 @@ const checkWinner = (player, computer) => {
   }
 };
 
+const showResult = (result) => {
+  if (result === "player") {
+    console.log("You win.");
+  } else if (result === "computer") {
+    console.log("You lose!");
+  } else {
+    console.log("It's a tie.");
+  }
+};
+
 const play = () => {
-  if (choices.indexOf(plyerChoice.toLowerCase()) !== -1) {
+  if (choices.indexOf(plyerChoice?.toLowerCase()) !== -1) {
     console.log(`You choose ${plyerChoice.toLowerCase()}`);
   } else {
     console.log("You cheated");
@@ -26,8 +36,8 @@ const play = () => {
   const computerChoise = choices[randomNumber];
   console.log(`Computer chooses: ${computerChoise}`);
 
-  const result = checkWinner(plyerChoice, computerChoise);
-  console.log(result);
+  const gameResult = checkWinner(plyerChoice, computerChoise);
+  showResult(gameResult);
 };
 
 play();
